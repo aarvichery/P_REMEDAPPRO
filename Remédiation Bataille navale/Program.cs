@@ -26,7 +26,7 @@ namespace Remédiation_Bataille_navale
             int MarginY = 15;
             // Bateaux
             string Boat = "█";
-            
+
             // Titre
 
             Console.ForegroundColor = ConsoleColor.Green;
@@ -42,6 +42,9 @@ namespace Remédiation_Bataille_navale
             Console.WriteLine("╚═══════════════════════════════════════╝\n");
             Console.ResetColor();
             Console.WriteLine("Bonjour, bienvenue dans le jeu bataille navale !");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Merci d'agrandir votre fenêtre pour qu'aucun bug ne se produise");
+            Console.ResetColor();
             Console.WriteLine("Le but du jeu est de couler tous les bateaux adverses.");
             Console.Write("Veuillez choisir la taille de votre grille, la grille doit être de maximum ");
             Console.ForegroundColor = ConsoleColor.Red;
@@ -51,53 +54,77 @@ namespace Remédiation_Bataille_navale
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write(Max);
             Console.ResetColor();
-            Console.WriteLine(" de côté." );
+            Console.WriteLine(" de côté.");
             Console.Write("Votre valeur : ");
+
             SquareValue = Convert.ToInt32(Console.ReadLine());
             do
             {
-                
+
+
+
+
+
                 if (SquareValue < 10)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("Le nombre que vous avez choisi est trop petit pour ce jeu, veuillez rééssayer avec une valeur entre ");
+                    Console.ResetColor();
                     Console.Write(Min);
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write(" et ");
+                    Console.ResetColor();
                     Console.WriteLine(Max);
                     Console.Write("Votre valeur : ");
                     IsValueOK = false;
                     SquareValue = Convert.ToInt32(Console.ReadLine());
 
-                }else if (SquareValue > 10 && SquareValue < 16)
-                {
-                    IsValueOK = true;
-                }
-                if (SquareValue > 16)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("Le nombre que vous avez choisi est trop grand pour ce jeu, veuillez rééssayer avec une valeur entre ");
-                    Console.Write(Min);
-                    Console.Write(" et ");
-                    Console.WriteLine(Max);
-                    Console.Write("Votre valeur : ");
-                    IsValueOK = false;
-                    SquareValue = Convert.ToInt32(Console.ReadLine());
                 }
                 else if (SquareValue > 10 && SquareValue < 16)
                 {
                     IsValueOK = true;
                 }
-                if (SquareValue == 10 || SquareValue == 16) ;
+
+
+
+
+                if (SquareValue > 16)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Le nombre que vous avez choisi est trop grand pour ce jeu, veuillez rééssayer avec une valeur entre ");
+                    Console.ResetColor();
+                    Console.Write(Min);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write(" et ");
+                    Console.ResetColor();
+                    Console.WriteLine(Max);
+                    Console.Write("Votre valeur : ");
+                    IsValueOK = false;
+                    string input = Console.ReadLine();
+                    int.TryParse(input, out SquareValue);
+
+                }
+                else if (SquareValue > 10 && SquareValue < 16)
                 {
                     IsValueOK = true;
                 }
-            } while (!IsValueOK);
-            
+                if (SquareValue == 10 || SquareValue == 16)
+                {
+                    IsValueOK = true;
+                }
+
+
+
+
+
+            } while (IsValueOK == false);
+
+
             Console.ResetColor();
             Console.WriteLine("Vous jouerez sur une grille carré de " + SquareValue + " de côté, si aucun vainqueur, le jeu se terminera au bout de 12 minutes.\n");
             Console.Write("BONNE CHANCE !");
             Console.Clear();
-            
+
 
             // Création du tableau
 
@@ -284,7 +311,7 @@ namespace Remédiation_Bataille_navale
                     Console.Write("P");
                     break;
             }
-            
+
 
             int RowNumber = 1;
 
@@ -395,11 +422,11 @@ namespace Remédiation_Bataille_navale
                     break;
 
                 case 14:
-                    TableColRow[13, 0] = PorteAvion;
-                    TableColRow[14, 0] = PorteAvion;
-                    TableColRow[15, 0] = PorteAvion;
-                    TableColRow[16, 0] = PorteAvion;
-                    TableColRow[17, 0] = PorteAvion;
+                    TableColRow[13, 1] = PorteAvion;
+                    TableColRow[13, 2] = PorteAvion;
+                    TableColRow[13, 3] = PorteAvion;
+                    TableColRow[13, 4] = PorteAvion;
+                    TableColRow[1, 5] = PorteAvion;
 
                     TableColRow[3, 8] = Croiseur;
                     TableColRow[3, 9] = Croiseur;
@@ -455,12 +482,61 @@ namespace Remédiation_Bataille_navale
                     break;
 
 
-                   
+
+
+
 
             }
-            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 6);
+
+            // Commandes de jeu
+
+
+
             Console.ResetColor();
-            Console.Write("Choisissez maintenant la case que vous souhaitez attaquer");
+            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 3);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("Pour choisir la colonne ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("[←], [→]");
+            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 4);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("Pour choisir la ligne ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("[↑], [↓]");
+            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 5);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("Pour tirer ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("[ENTER]");
+            Console.ResetColor();
+
+            // Création de la Variable qui va déterminer la colonne choisie par l'attaquant
+
+            int PosCol = 0;
+
+
+            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 8);
+            Console.WriteLine("Choisissez maintenant la case que vous souhaitez attaquer");
+
+            MarginX = 3;
+            MarginY = 15;
+
+            Console.SetCursorPosition(MarginY + 2, MarginX - 2);
+            ConsoleKeyInfo key1;
+            key1 = Console.ReadKey();
+            /*  switch (key1.KeyChar)
+              {
+                  case ConsoleKey.RightArrow:
+
+
+                      break;
+              }
+                 */
+
+
+
+
+
 
 
 
@@ -488,8 +564,8 @@ namespace Remédiation_Bataille_navale
         }
 
 
-        
-              
+
+
 
 
 
