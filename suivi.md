@@ -33,3 +33,11 @@
  
 - JDT
     - ...
+
+## 14.2
+- Feedback XCL
+    - votre journal de la semaine passée est vide ? Comment cela se fait-il ?
+    - vous n'avez pas tenu compte de mon feed-back de la semaine passée : supprimez les excédents de lignes blanches dans votre code
+ 
+- JDT
+    - ...
