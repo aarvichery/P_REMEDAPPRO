@@ -85,9 +85,6 @@ namespace Remédiation_Bataille_navale
                     IsValueOK = true;
                 }
 
-
-
-
                 if (SquareValue > 16)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -113,10 +110,6 @@ namespace Remédiation_Bataille_navale
                     IsValueOK = true;
                 }
 
-
-
-
-
             } while (IsValueOK == false);
 
 
@@ -124,7 +117,6 @@ namespace Remédiation_Bataille_navale
             Console.WriteLine("Vous jouerez sur une grille carré de " + SquareValue + " de côté, si aucun vainqueur, le jeu se terminera au bout de 12 minutes.\n");
             Console.Write("BONNE CHANCE !");
             Console.Clear();
-
 
             // Création du tableau
 
@@ -207,13 +199,11 @@ namespace Remédiation_Bataille_navale
                     }
                 } while (NbRowTable < SquareValue * 2);
 
-
                 Console.SetCursorPosition(MarginY, MarginX);
                 Console.Write("╚");
                 TableOK = 1;
                 do
                 {
-
                     Console.Write("═══");
                     Console.Write("╩");
                     TableOK++;
@@ -222,9 +212,7 @@ namespace Remédiation_Bataille_navale
 
             Console.Write("═══╝");
 
-
             // Création des lettres en haut de la grille d'attaque
-
 
             MarginY = 15;
             MarginX = 3;
@@ -252,11 +240,13 @@ namespace Remédiation_Bataille_navale
             switch (SquareValue)
             {
                 case 11:
+
                     Console.CursorLeft = MarginY += 4;
                     Console.Write("K");
                     break;
 
                 case 12:
+
                     Console.CursorLeft = MarginY += 4;
                     Console.Write("K");
                     Console.CursorLeft = MarginY += 4;
@@ -264,6 +254,7 @@ namespace Remédiation_Bataille_navale
                     break;
 
                 case 13:
+
                     Console.CursorLeft = MarginY += 4;
                     Console.Write("K");
                     Console.CursorLeft = MarginY += 4;
@@ -273,6 +264,7 @@ namespace Remédiation_Bataille_navale
                     break;
 
                 case 14:
+
                     Console.CursorLeft = MarginY += 4;
                     Console.Write("K");
                     Console.CursorLeft = MarginY += 4;
@@ -284,6 +276,7 @@ namespace Remédiation_Bataille_navale
                     break;
 
                 case 15:
+
                     Console.CursorLeft = MarginY += 4;
                     Console.Write("K");
                     Console.CursorLeft = MarginY += 4;
@@ -297,6 +290,7 @@ namespace Remédiation_Bataille_navale
                     break;
 
                 case 16:
+
                     Console.CursorLeft = MarginY += 4;
                     Console.Write("K");
                     Console.CursorLeft = MarginY += 4;
@@ -311,7 +305,6 @@ namespace Remédiation_Bataille_navale
                     Console.Write("P");
                     break;
             }
-
 
             int RowNumber = 1;
 
@@ -329,9 +322,6 @@ namespace Remédiation_Bataille_navale
 
             Console.Write(RowNumber);
 
-
-
-
             // Création des bateaux 
             int PorteAvion = 5;
             int Croiseur = 4;
@@ -342,6 +332,7 @@ namespace Remédiation_Bataille_navale
             switch (SquareValue)
             {
                 case 10:
+
                     TableColRow[0, 1] = PorteAvion;
                     TableColRow[0, 2] = PorteAvion;
                     TableColRow[0, 3] = PorteAvion;
@@ -362,6 +353,7 @@ namespace Remédiation_Bataille_navale
                     break;
 
                 case 11:
+
                     TableColRow[5, 1] = PorteAvion;
                     TableColRow[5, 2] = PorteAvion;
                     TableColRow[5, 3] = PorteAvion;
@@ -382,6 +374,7 @@ namespace Remédiation_Bataille_navale
                     break;
 
                 case 12:
+
                     TableColRow[7, 8] = PorteAvion;
                     TableColRow[7, 7] = PorteAvion;
                     TableColRow[7, 6] = PorteAvion;
@@ -402,6 +395,7 @@ namespace Remédiation_Bataille_navale
                     break;
 
                 case 13:
+
                     TableColRow[2, 0] = PorteAvion;
                     TableColRow[3, 0] = PorteAvion;
                     TableColRow[4, 0] = PorteAvion;
@@ -422,6 +416,7 @@ namespace Remédiation_Bataille_navale
                     break;
 
                 case 14:
+
                     TableColRow[13, 1] = PorteAvion;
                     TableColRow[13, 2] = PorteAvion;
                     TableColRow[13, 3] = PorteAvion;
@@ -442,6 +437,7 @@ namespace Remédiation_Bataille_navale
                     break;
 
                 case 15:
+
                     TableColRow[5, 4] = PorteAvion;
                     TableColRow[5, 5] = PorteAvion;
                     TableColRow[5, 6] = PorteAvion;
@@ -462,6 +458,7 @@ namespace Remédiation_Bataille_navale
                     break;
 
                 case 16:
+
                     TableColRow[15, 5] = PorteAvion;
                     TableColRow[15, 6] = PorteAvion;
                     TableColRow[15, 7] = PorteAvion;
@@ -480,17 +477,9 @@ namespace Remédiation_Bataille_navale
                     TableColRow[2, 3] = Torpilleur;
                     TableColRow[2, 4] = Torpilleur;
                     break;
-
-
-
-
-
-
             }
 
             // Commandes de jeu
-
-
 
             Console.ResetColor();
             Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 3);
@@ -512,26 +501,225 @@ namespace Remédiation_Bataille_navale
 
             // Création de la Variable qui va déterminer la colonne choisie par l'attaquant
 
-            int PosCol = 0;
-
+            int PosCol = 1;
+            int Letter = 1;
+           
 
             Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 8);
-            Console.WriteLine("Choisissez maintenant la case que vous souhaitez attaquer");
+            Console.WriteLine("Choisissez maintenant la case que vous souhaitez attaquer en sélectionnant dans un premier temps la colonne et ensuite la ligne");
 
             MarginX = 3;
             MarginY = 15;
-
-            Console.SetCursorPosition(MarginY + 2, MarginX - 2);
             ConsoleKeyInfo key1;
-            key1 = Console.ReadKey();
-            /*  switch (key1.KeyChar)
-              {
-                  case ConsoleKey.RightArrow:
+
+            Console.SetCursorPosition(MarginY + 2, MarginX - 1);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("A");
+
+            
+            do
+            {
+                key1 = Console.ReadKey(true);
+
+                switch (key1.Key)
+                {
+                    case ConsoleKey.RightArrow:
+
+                        switch (Letter)
+                        {
+                            case 1:
+
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("A");
+                                Console.CursorLeft += 3;
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write("B");
+                                Letter++;
+                                PosCol++;
+                                break;
+
+                            case 2:
+
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("B");
+                                Console.CursorLeft += 3;
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write("C");
+                                Letter++;
+                                PosCol++;
+                                break;
+
+                            case 3:
+
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("C");
+                                Console.CursorLeft += 3;
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write("D");
+                                Letter++;
+                                PosCol++;
+                                break;
+
+                            case 4:
+
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("D");
+                                Console.CursorLeft += 3;
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write("E");
+                                Letter++;
+                                PosCol++;
+                                break;
+
+                            case 5:
+
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("E");
+                                Console.CursorLeft += 3;
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write("F");
+                                Letter++;
+                                PosCol++;
+                                break;
+
+                            case 6:
+
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("F");
+                                Console.CursorLeft += 3;
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write("G");
+                                Letter++;
+                                PosCol++;
+                                break;
+
+                            case 7:
+
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("G");
+                                Console.CursorLeft += 3;
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write("H");
+                                Letter++;
+                                PosCol++;
+                                break;
+
+                            case 8:
+
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("H");
+                                Console.CursorLeft += 3;
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write("I");
+                                Letter++;
+                                PosCol++;
+                                break;
+
+                            case 9:
+
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("I");
+                                Console.CursorLeft += 3;
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write("J");
+                                Letter++;
+                                PosCol++;
+                                break;
+
+                            case 10:
+
+                                switch (SquareValue)
+                                {
+                                    case 10:
+
+                                        if(PosCol == 10)
+                                        {
+                                            Console.CursorLeft--;
+                                            Console.ForegroundColor = ConsoleColor.Red;
+                                            Console.Write("J");
+                                            Console.SetCursorPosition(MarginY + 2, MarginX - 1);
+                                            Console.ForegroundColor = ConsoleColor.Green;
+                                            Console.Write("A");
+                                            Letter = 1;
+                                            PosCol = 1;
+
+                                        }
+
+                                        break;
+                                }
+                                if (Letter == 10)
+                                {
+                                    Letter++;
+                                }
+                                break;
+                        
+
+                            case 11:
+
+                                switch (SquareValue)
+                                {
+                                    case 11:
+                                        
+                                        if(PosCol == 10)
+                                        {
+                                            Console.CursorLeft--;
+                                            Console.ForegroundColor = ConsoleColor.Red;
+                                            Console.Write("J");
+                                            Console.CursorLeft += 3;
+                                            Console.ForegroundColor= ConsoleColor.Green;
+                                            Console.Write("K");
+                                            
+
+                                        }
+                                        PosCol++;
+                                            
+                                        if (PosCol == 12)
+                                        {
+                                            Console.CursorLeft--;
+                                            Console.ForegroundColor = ConsoleColor.Red;
+                                            Console.Write("");
+                                            Console.SetCursorPosition(MarginY + 2, MarginX - 1);
+                                            Console.ForegroundColor = ConsoleColor.Green;
+                                            Console.Write("A");
+                                            Letter = 1;
+                                            PosCol = 1;
+                                        }
+
+                                        
+                                        
+
+                                        break;
+                                }
+
+                                break;
+                        }
 
 
-                      break;
-              }
-                 */
+
+
+
+
+
+                        break;
+                }
+
+            } while (key1.Key != ConsoleKey.Enter);
+
+
+
+
+
+
+
 
 
 

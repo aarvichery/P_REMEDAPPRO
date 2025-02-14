@@ -42,4 +42,5 @@
     - vous n'avez pas tenu compte de mon feed-back de la semaine passée : supprimez les excédents de lignes blanches dans votre code
  
 - JDT
-    - ...
+    - Vendredi 14 Février 
+        - 135 minutes : J'ai commencé à créer les systèmes d'attaques sur ma grille
