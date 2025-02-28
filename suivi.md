@@ -44,3 +44,10 @@
 - JDT
     - Vendredi 14 Février 
         - 135 minutes : J'ai commencé à créer les systèmes d'attaques sur ma grille
+
+## 28.2
+
+- Feedback XCL
+    - Il reste encore quelques successions de lignes blanches, mais le code est déjà bien mieux présenté. Corrigez les derniers détails svp. Faites un commit qui ne contient que ce travail (sans autre modification)
+    - Faites une recherche sur `c# changer dimensions console`, cela devrait vous donner un résultat utile pour votre programme
+    - Vous vous êtes engagé dans une voie difficile pour dessiner votre grille. Il vous faut utiliser des boucles `for`. Je vais passer vers vous pour vous mettre sur la voie.
