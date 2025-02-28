@@ -215,26 +215,25 @@ namespace Remédiation_Bataille_navale
 
             // Création des lettres en haut de la grille d'attaque
 
+            Console.ForegroundColor = ConsoleColor.Red;
             for (int t = 0 ; t < SquareValue; t++)
             {
                 Console.SetCursorPosition(t * 4 + 17, 2);
-                Console.Write((char)('A' + t));
+                Console.Write((char)('A' + t ));
             }
-            int RowNumber = 1;
+
 
             // Création des numéros à droite de la grille
+            
 
-            Console.SetCursorPosition(MarginY + 3, MarginX += 1);
-            do
+            Console.SetCursorPosition(MarginY + 4 * SquareValue, MarginX++);
+            for (int t = 0; t < SquareValue; t++)
             {
-                Console.Write(RowNumber);
-                Console.CursorLeft = MarginY + 3;
-                Console.CursorTop = MarginX += 2;
-                RowNumber++;
-
-            } while (RowNumber < SquareValue);
-
-            Console.Write(RowNumber);
+                Console.SetCursorPosition(17 + 4 * SquareValue, 4 + t * 2);
+                Console.Write(t + 1);
+                
+            }
+            Console.ResetColor();
 
             // Création des bateaux 
             int PorteAvion = 5;
