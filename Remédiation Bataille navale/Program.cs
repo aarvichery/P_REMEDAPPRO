@@ -215,98 +215,11 @@ namespace Remédiation_Bataille_navale
 
             // Création des lettres en haut de la grille d'attaque
 
-            MarginY = 15;
-            MarginX = 3;
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.SetCursorPosition(MarginY + 2, MarginX - 1);
-            Console.Write("A");
-            Console.CursorLeft = MarginY += 6;
-            Console.Write("B");
-            Console.CursorLeft = MarginY += 4;
-            Console.Write("C");
-            Console.CursorLeft = MarginY += 4;
-            Console.Write("D");
-            Console.CursorLeft = MarginY += 4;
-            Console.Write("E");
-            Console.CursorLeft = MarginY += 4;
-            Console.Write("F");
-            Console.CursorLeft = MarginY += 4;
-            Console.Write("G");
-            Console.CursorLeft = MarginY += 4;
-            Console.Write("H");
-            Console.CursorLeft = MarginY += 4;
-            Console.Write("I");
-            Console.CursorLeft = MarginY += 4;
-            Console.Write("J");
-            switch (SquareValue)
+            for (int t = 0 ; t < SquareValue; t++)
             {
-                case 11:
-
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("K");
-                    break;
-
-                case 12:
-
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("K");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("L");
-                    break;
-
-                case 13:
-
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("K");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("L");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("M");
-                    break;
-
-                case 14:
-
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("K");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("L");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("M");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("N");
-                    break;
-
-                case 15:
-
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("K");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("L");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("M");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("N");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("O");
-                    break;
-
-                case 16:
-
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("K");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("L");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("M");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("N");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("O");
-                    Console.CursorLeft = MarginY += 4;
-                    Console.Write("P");
-                    break;
+                Console.SetCursorPosition(t * 4 + 17, 2);
+                Console.Write((char)('A' + t));
             }
-
             int RowNumber = 1;
 
             // Création des numéros à droite de la grille
