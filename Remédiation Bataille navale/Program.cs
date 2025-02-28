@@ -425,6 +425,7 @@ namespace Remédiation_Bataille_navale
 
             MarginX = 3;
             MarginY = 15;
+            Console.CursorVisible = false;
             ConsoleKeyInfo key1;
 
             Console.SetCursorPosition(MarginY + 2, MarginX - 1);
@@ -974,18 +975,20 @@ namespace Remédiation_Bataille_navale
             } while (key1.Key != ConsoleKey.Enter);
 
             int ligne = 1;
+            int ROW = 1;
             do
             {
 
-                if (TableColRow[Letter--, ligne--] == 0)
+                if (TableColRow[Letter - 1, ligne] == 0)
                 {
+                    Console.CursorLeft--;
                     Console.CursorTop += 2;
                     Console.Write('█');
-                    ligne++;
+                    ROW++;
 
                 }
 
-            } while (ligne != SquareValue);
+            } while (ROW != SquareValue + 1);
 
             Console.ReadLine();
 
