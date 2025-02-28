@@ -12,6 +12,7 @@ namespace Remédiation_Bataille_navale
     {
         static void Main(string[] args)
         {
+
             // Attribution des variables
             // Titre
             int Max = 16;
@@ -818,7 +819,7 @@ namespace Remédiation_Bataille_navale
 
                                 break;
                         }
-                    break;
+                        break;
 
                     case ConsoleKey.LeftArrow:
                         switch (Letter)
@@ -873,7 +874,7 @@ namespace Remédiation_Bataille_navale
                                     PosCol = 16;
                                 }
 
-                            break;
+                                break;
 
                             case 16:
 
@@ -945,7 +946,7 @@ namespace Remédiation_Bataille_navale
                                 Console.Write("J");
                                 Letter--;
                                 PosCol--;
-                            break;
+                                break;
 
                             case 10:
 
@@ -957,7 +958,7 @@ namespace Remédiation_Bataille_navale
                                 Console.Write("I");
                                 Letter--;
                                 PosCol--;
-                            break;
+                                break;
 
                             case 9:
 
@@ -1055,86 +1056,28 @@ namespace Remédiation_Bataille_navale
                                 PosCol--;
                                 break;
 
-
-
-
-
-
-
                         }
                         break;
+                } while (key1.Key != ConsoleKey.Enter) ;
+            } while (key1.Key != ConsoleKey.Enter);
 
+            int ligne = 1;
+            do
+            {
 
+                if (TableColRow[Letter--, ligne--] == 0)
+                {
+                    Console.CursorTop += 2;
+                    Console.Write('█');
+                    ligne++;
 
                 }
 
-            }while (key1.Key != ConsoleKey.Enter) ;
+            } while (ligne != SquareValue);
+
+            Console.ReadLine();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                Console.ReadLine();
-
-            }
+        }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
