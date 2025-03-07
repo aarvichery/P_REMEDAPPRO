@@ -51,3 +51,12 @@
     - Il reste encore quelques successions de lignes blanches, mais le code est déjà bien mieux présenté. Corrigez les derniers détails svp. Faites un commit qui ne contient que ce travail (sans autre modification)
     - Faites une recherche sur `c# changer dimensions console`, cela devrait vous donner un résultat utile pour votre programme
     - Vous vous êtes engagé dans une voie difficile pour dessiner votre grille. Il vous faut utiliser des boucles `for`. Je vais passer vers vous pour vous mettre sur la voie.
+
+## 7.3
+
+- Feedback XCL
+    - J'avais demandé de faire un bilan des objectifs, il n'a pas été fait
+    - Journal: est-ce que vous n'auriez pas oublié de le publier ?
+    - Commits: bravo, c'est impeccable
+
+- Journal de travail
