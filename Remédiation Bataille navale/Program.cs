@@ -490,21 +490,9 @@ namespace Remédiation_Bataille_navale
                 
             } while (key1.Key != ConsoleKey.Enter);
 
-            int lign = 1;
-            int ROW = 1;
-            do
-            {
+            Table(SquareValue, TableColRow);
 
-                if (TableColRow[Letter - 1, lign] == 0)
-                {
-                    Console.CursorLeft--;
-                    Console.CursorTop += 2;
-                    Console.Write('█');
-                    ROW++;
 
-                }
-
-            } while (ROW != SquareValue + 1);
 
             Console.ReadLine();
 
@@ -516,6 +504,165 @@ namespace Remédiation_Bataille_navale
         {
             Console.SetCursorPosition(13 + 4 * x, 2 + 2 * y);
             Console.Write('█');
+        }
+
+        static void Table(int x, int[,] y)
+        {
+            int PorteAvion = 5;
+            int Croiseur = 4;
+            int ContreTorpilleur = 3;
+            int Torpilleur = 2;
+            switch (x)
+            {
+                case 10:
+
+                    y[0, 1] = PorteAvion;
+                    y[0, 2] = PorteAvion;
+                    y[0, 3] = PorteAvion;
+                    y[0, 4] = PorteAvion;
+                    y[0, 5] = PorteAvion;
+
+                    y[3, 9] = Croiseur;
+                    y[4, 9] = Croiseur;
+                    y[5, 9] = Croiseur;
+                    y[6, 9] = Croiseur;
+
+                    y[6, 7] = ContreTorpilleur;
+                    y[7, 5] = ContreTorpilleur;
+                    y[8, 6] = ContreTorpilleur;
+
+                    y[3, 1] = Torpilleur;
+                    y[3, 2] = Torpilleur;
+                    break;
+
+                case 11:
+
+                    y[5, 1] = PorteAvion;
+                    y[5, 2] = PorteAvion;
+                    y[5, 3] = PorteAvion;
+                    y[5, 4] = PorteAvion;
+                    y[5, 5] = PorteAvion;
+
+                    y[3, 9] = Croiseur;
+                    y[4, 9] = Croiseur;
+                    y[5, 9] = Croiseur;
+                    y[6, 9] = Croiseur;
+
+                    y[6, 10] = ContreTorpilleur;
+                    y[7, 10] = ContreTorpilleur;
+                    y[8, 10] = ContreTorpilleur;
+
+                    y[3, 0] = Torpilleur;
+                    y[3, 1] = Torpilleur;
+                    break;
+
+                case 12:
+
+                    y[7, 8] = PorteAvion;
+                    y[7, 7] = PorteAvion;
+                    y[7, 6] = PorteAvion;
+                    y[7, 5] = PorteAvion;
+                    y[7, 4] = PorteAvion;
+
+                    y[3, 9] = Croiseur;
+                    y[4, 9] = Croiseur;
+                    y[5, 9] = Croiseur;
+                    y[6, 9] = Croiseur;
+
+                    y[5, 11] = ContreTorpilleur;
+                    y[6, 11] = ContreTorpilleur;
+                    y[7, 11] = ContreTorpilleur;
+
+                    y[6, 3] = Torpilleur;
+                    y[6, 3] = Torpilleur;
+                    break;
+
+                case 13:
+
+                    y[2, 0] = PorteAvion;
+                    y[3, 0] = PorteAvion;
+                    y[4, 0] = PorteAvion;
+                    y[5, 0] = PorteAvion;
+                    y[6, 0] = PorteAvion;
+
+                    y[6, 8] = Croiseur;
+                    y[6, 9] = Croiseur;
+                    y[6, 10] = Croiseur;
+                    y[6, 11] = Croiseur;
+
+                    y[5, 6] = ContreTorpilleur;
+                    y[5, 7] = ContreTorpilleur;
+                    y[5, 6] = ContreTorpilleur;
+
+                    y[1, 3] = Torpilleur;
+                    y[1, 4] = Torpilleur;
+                    break;
+
+                case 14:
+
+                    y[13, 1] = PorteAvion;
+                    y[13, 2] = PorteAvion;
+                    y[13, 3] = PorteAvion;
+                    y[13, 4] = PorteAvion;
+                    y[1, 5] = PorteAvion;
+
+                    y[3, 8] = Croiseur;
+                    y[3, 9] = Croiseur;
+                    y[3, 10] = Croiseur;
+                    y[3, 11] = Croiseur;
+
+                    y[8, 6] = ContreTorpilleur;
+                    y[8, 7] = ContreTorpilleur;
+                    y[8, 6] = ContreTorpilleur;
+
+                    y[3, 5] = Torpilleur;
+                    y[3, 6] = Torpilleur;
+                    break;
+
+                case 15:
+
+                    y[5, 4] = PorteAvion;
+                    y[5, 5] = PorteAvion;
+                    y[5, 6] = PorteAvion;
+                    y[5, 7] = PorteAvion;
+                    y[5, 8] = PorteAvion;
+
+                    y[6, 8] = Croiseur;
+                    y[6, 9] = Croiseur;
+                    y[6, 10] = Croiseur;
+                    y[6, 11] = Croiseur;
+
+                    y[5, 6] = ContreTorpilleur;
+                    y[4, 6] = ContreTorpilleur;
+                    y[3, 6] = ContreTorpilleur;
+
+                    y[10, 3] = Torpilleur;
+                    y[10, 4] = Torpilleur;
+                    break;
+
+                case 16:
+
+                    y[15, 5] = PorteAvion;
+                    y[15, 6] = PorteAvion;
+                    y[15, 7] = PorteAvion;
+                    y[15, 8] = PorteAvion;
+                    y[15, 9] = PorteAvion;
+
+                    y[4, 2] = Croiseur;
+                    y[4, 3] = Croiseur;
+                    y[4, 4] = Croiseur;
+                    y[4, 5] = Croiseur;
+
+                    y[1, 0] = ContreTorpilleur;
+                    y[2, 0] = ContreTorpilleur;
+                    y[3, 0] = ContreTorpilleur;
+
+                    y[2, 3] = Torpilleur;
+                    y[2, 4] = Torpilleur;
+                    break;
+            }
+            int[,] TableColRow = new int[x, x];
+
         }
     }
 }
