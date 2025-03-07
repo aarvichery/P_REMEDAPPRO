@@ -52,6 +52,15 @@
     - Faites une recherche sur `c# changer dimensions console`, cela devrait vous donner un résultat utile pour votre programme
     - Vous vous êtes engagé dans une voie difficile pour dessiner votre grille. Il vous faut utiliser des boucles `for`. Je vais passer vers vous pour vous mettre sur la voie.
 
+
+- JDT 
+    - Vendredi 28 Février
+        - 15 minutes : Enlever les lignes blanches de mon code
+        - 45 minutes : Ajout des lettres au dessus de la grille grâce à une boucle "for"
+        - 30 minutes : Ajout des chiffres sur la droite de ma grille grâce à une boucle "for"
+        - 30 minutes : Ajout de la fonctionnalité qui sert à se déplacer dans les colonne pour choisir la colonne que nous souhaitons attaquer
+        -  15 minutes : Ajout des cases qui sont sélectionnables dans la colonne que nous avons choisi d'attaquer
+
 ## 7.3
 
 - Feedback XCL
@@ -59,4 +68,3 @@
     - Journal: est-ce que vous n'auriez pas oublié de le publier ?
     - Commits: bravo, c'est impeccable
 
-- Journal de travail
