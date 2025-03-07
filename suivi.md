@@ -59,7 +59,7 @@
         - 45 minutes : Ajout des lettres au dessus de la grille grâce à une boucle "for"
         - 30 minutes : Ajout des chiffres sur la droite de ma grille grâce à une boucle "for"
         - 30 minutes : Ajout de la fonctionnalité qui sert à se déplacer dans les colonne pour choisir la colonne que nous souhaitons attaquer
-        -  15 minutes : Ajout des cases qui sont sélectionnables dans la colonne que nous avons choisi d'attaquer
+        - 15 minutes : Ajout des cases qui sont sélectionnables dans la colonne que nous avons choisi d'attaquer
 
 ## 7.3
 
@@ -67,4 +67,11 @@
     - J'avais demandé de faire un bilan des objectifs, il n'a pas été fait
     - Journal: est-ce que vous n'auriez pas oublié de le publier ?
     - Commits: bravo, c'est impeccable
+
+- JDT
+    - Vendredi 07 Mars 
+        - 20 minutes : Le prof nous a expliqué ce que nous devrons faire aujourd'hui
+        - 5 minutes : Ajout de mon avancée dans le projet dans le fichier "status.md" dans le repo
+        - 5 minutes : Ajout de mon journal de travail de Vendredi 28 Février car j'avais oublié de le faire
+        - 85 minutes : Ajout du choix de la case à attaquer dans mon code
 
