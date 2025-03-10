@@ -424,73 +424,128 @@ namespace Remédiation_Bataille_navale
             Console.WriteLine("Choisissez maintenant la case que vous souhaitez attaquer en la sélectionnant");
             Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 9);
             Console.WriteLine("et en appuyant sur [ENTER]");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 10);
+            Console.Write("Torpilleur 0/2");
+            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 11);
+            Console.Write("Contre Torpilleur 0/3");
+            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 12);
+            Console.Write("Croiseur 0/4");
+            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 13);
+            Console.Write("Porte Avion 0/5");
+
+
+
+
+
+
 
             MarginX = 3;
             MarginY = 15;
             Console.CursorVisible = false;
             ConsoleKeyInfo key1;
 
-            
-
+            int twoboat = 0;
+            int threeboat = 0;
+            int fourboat = 0;
+            int fiveboat = 0;
+            int end = 0;
             int colonne = 1;
             int ligne = 1;
-
             do
             {
-                FillCell(colonne, ligne);
-                key1 = Console.ReadKey(true);
-                
-                switch (key1.Key)
+                do
                 {
-                    case ConsoleKey.RightArrow:
+                    FillCell(colonne, ligne);
+                    key1 = Console.ReadKey(true);
 
-                        Console.CursorLeft--;
-                        Console.Write(" ");
-                        colonne++;
-                        if (colonne > SquareValue)
-                        {
-                            colonne = 1;
-                        }
+                    switch (key1.Key)
+                    {
+                        case ConsoleKey.RightArrow:
 
-                        break;
+                            Console.CursorLeft--;
+                            Console.Write(" ");
+                            colonne++;
+                            if (colonne > SquareValue)
+                            {
+                                colonne = 1;
+                            }
 
-                    case ConsoleKey.LeftArrow:
-                        Console.CursorLeft--;
-                        Console.Write(" ");
-                        colonne--;
-                        if (colonne < 1)
-                        {
-                            colonne = SquareValue;
-                        }
+                            break;
 
-                        break;
+                        case ConsoleKey.LeftArrow:
+                            Console.CursorLeft--;
+                            Console.Write(" ");
+                            colonne--;
+                            if (colonne < 1)
+                            {
+                                colonne = SquareValue;
+                            }
 
-                    case ConsoleKey.UpArrow:
-                        Console.CursorLeft--;
-                        Console.Write(" ");
-                        ligne--;
-                        if (ligne < 1)
-                        {
-                            ligne = SquareValue;
-                        }
-                        break;
+                            break;
 
-                    case ConsoleKey.DownArrow:
-                        Console.CursorLeft--;
-                        Console.Write(" ");
-                        ligne++;
-                        if (ligne > SquareValue)
-                        {
-                            ligne = 1;
-                        }
+                        case ConsoleKey.UpArrow:
+                            Console.CursorLeft--;
+                            Console.Write(" ");
+                            ligne--;
+                            if (ligne < 1)
+                            {
+                                ligne = SquareValue;
+                            }
+                            break;
 
-                        
-                        break;
-                } 
+                        case ConsoleKey.DownArrow:
+                            Console.CursorLeft--;
+                            Console.Write(" ");
+                            ligne++;
+                            if (ligne > SquareValue)
+                            {
+                                ligne = 1;
+                            }
+
+
+                            break;
+                    }
+
+                } while (key1.Key != ConsoleKey.Enter);
                 
-            } while (key1.Key != ConsoleKey.Enter);
+                
 
-            Table(SquareValue, TableColRow);
+            if (TableColRow[colonne-1, ligne-1] == 0 )
+            {
+                TableColRow[colonne - 1, ligne - 1] = 1;
+                end++;
+
+            }
+
+            if (TableColRow[colonne - 1, ligne - 1] == 2)
+            {
+                    TableColRow[colonne - 1, ligne - 1] = 6;
+                    twoboat++;
+
+            }
+
+                if (TableColRow[colonne - 1, ligne - 1] == 3)
+                {
+                    TableColRow[colonne - 1, ligne - 1] = 9;
+                    threeboat++;
+
+                }
+
+                if (TableColRow[colonne - 1, ligne - 1] == 4)
+                {
+                    TableColRow[colonne - 1, ligne - 1] = 12;
+                    fourboat++;
+
+                }
+            } while (end == 30);
+            
+
+
+            // Table(SquareValue, TableColRow);
+
+            
+
 
 
 
@@ -662,6 +717,8 @@ namespace Remédiation_Bataille_navale
                     break;
             }
             int[,] TableColRow = new int[x, x];
+
+         
 
         }
     }
