@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Lifetime;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Remédiation_Bataille_navale
@@ -336,7 +338,7 @@ namespace Remédiation_Bataille_navale
                     TableColRow[13, 2] = PorteAvion;
                     TableColRow[13, 3] = PorteAvion;
                     TableColRow[13, 4] = PorteAvion;
-                    TableColRow[1, 5] = PorteAvion;
+                    TableColRow[13, 5] = PorteAvion;
 
                     TableColRow[3, 8] = Croiseur;
                     TableColRow[3, 9] = Croiseur;
@@ -420,19 +422,7 @@ namespace Remédiation_Bataille_navale
             int Letter = 1;
 
 
-            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 8);
-            Console.WriteLine("Choisissez maintenant la case que vous souhaitez attaquer en la sélectionnant");
-            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 9);
-            Console.WriteLine("et en appuyant sur [ENTER]");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 10);
-            Console.Write("Torpilleur 0/2");
-            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 11);
-            Console.Write("Contre Torpilleur 0/3");
-            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 12);
-            Console.Write("Croiseur 0/4");
-            Console.SetCursorPosition(MarginX - 10 + SquareValue * 5, 13);
-            Console.Write("Porte Avion 0/5");
+
 
 
 
@@ -452,6 +442,23 @@ namespace Remédiation_Bataille_navale
             int end = 0;
             int colonne = 1;
             int ligne = 1;
+            int allboat = 0;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.SetCursorPosition(MarginX + SquareValue * 6, 8);
+            Console.WriteLine("Choisissez maintenant la case que vous souhaitez attaquer en la sélectionnant");
+            Console.SetCursorPosition(MarginX + SquareValue * 6, 9);
+            Console.WriteLine("et en appuyant sur [ENTER]");
+            Console.ResetColor();
+            Console.SetCursorPosition(MarginX + SquareValue * 6, 10);
+            Console.Write("Torpilleur 0/2");
+            Console.SetCursorPosition(MarginX + SquareValue * 6, 11);
+            Console.Write("Contre Torpilleur 0/3");
+            Console.SetCursorPosition(MarginX + SquareValue * 6, 12);
+            Console.Write("Croiseur 0/4");
+            Console.SetCursorPosition(MarginX + SquareValue * 6, 13);
+            Console.Write("Porte Avion 0/5");
+            Console.SetCursorPosition(MarginX + SquareValue * 6, 14);
+            Console.Write("Water " + end + " /30");
             do
             {
                 do
@@ -463,8 +470,22 @@ namespace Remédiation_Bataille_navale
                     {
                         case ConsoleKey.RightArrow:
 
+
                             Console.CursorLeft--;
                             Console.Write(" ");
+                            if (TableColRow[colonne - 1, ligne - 1] == 1)
+                            {
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                                Console.Write("█");
+
+                            }
+                            if (TableColRow[colonne - 1, ligne - 1] == 6 || TableColRow[colonne - 1, ligne - 1] == 9 || TableColRow[colonne - 1, ligne - 1] == 12 || TableColRow[colonne - 1, ligne - 1] == 15)
+                            {
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("█");
+                            }
                             colonne++;
                             if (colonne > SquareValue)
                             {
@@ -476,6 +497,19 @@ namespace Remédiation_Bataille_navale
                         case ConsoleKey.LeftArrow:
                             Console.CursorLeft--;
                             Console.Write(" ");
+                            if (TableColRow[colonne - 1, ligne - 1] == 1)
+                            {
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                                Console.Write("█");
+
+                            }
+                            if (TableColRow[colonne - 1, ligne - 1] == 6 || TableColRow[colonne - 1, ligne - 1] == 9 || TableColRow[colonne - 1, ligne - 1] == 12 || TableColRow[colonne - 1, ligne - 1] == 15)
+                            {
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("█");
+                            }
                             colonne--;
                             if (colonne < 1)
                             {
@@ -487,6 +521,19 @@ namespace Remédiation_Bataille_navale
                         case ConsoleKey.UpArrow:
                             Console.CursorLeft--;
                             Console.Write(" ");
+                            if (TableColRow[colonne - 1, ligne - 1] == 1)
+                            {
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                                Console.Write("█");
+
+                            }
+                            if (TableColRow[colonne - 1, ligne - 1] == 6 || TableColRow[colonne - 1, ligne - 1] == 9 || TableColRow[colonne - 1, ligne - 1] == 12 || TableColRow[colonne - 1, ligne - 1] == 15)
+                            {
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("█");
+                            }
                             ligne--;
                             if (ligne < 1)
                             {
@@ -497,6 +544,19 @@ namespace Remédiation_Bataille_navale
                         case ConsoleKey.DownArrow:
                             Console.CursorLeft--;
                             Console.Write(" ");
+                            if (TableColRow[colonne - 1, ligne - 1] == 1)
+                            {
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                                Console.Write("█");
+
+                            }
+                            if (TableColRow[colonne - 1, ligne - 1] == 6 || TableColRow[colonne - 1, ligne - 1] == 9 || TableColRow[colonne - 1, ligne - 1] == 12 || TableColRow[colonne - 1, ligne - 1] == 15)
+                            {
+                                Console.CursorLeft--;
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("█");
+                            }
                             ligne++;
                             if (ligne > SquareValue)
                             {
@@ -504,50 +564,199 @@ namespace Remédiation_Bataille_navale
                             }
 
 
-                            break;
+                        break;
                     }
 
                 } while (key1.Key != ConsoleKey.Enter);
-                
-                
-
-            if (TableColRow[colonne-1, ligne-1] == 0 )
-            {
-                TableColRow[colonne - 1, ligne - 1] = 1;
-                end++;
-
-            }
-
-            if (TableColRow[colonne - 1, ligne - 1] == 2)
-            {
-                    TableColRow[colonne - 1, ligne - 1] = 6;
-                    twoboat++;
-
-            }
-
-                if (TableColRow[colonne - 1, ligne - 1] == 3)
                 {
-                    TableColRow[colonne - 1, ligne - 1] = 9;
-                    threeboat++;
+
+                    if (TableColRow[colonne - 1, ligne - 1] == 0)
+                    {
+                        TableColRow[colonne - 1, ligne - 1] = 1;
+                        end++;
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.SetCursorPosition(13 + 4 * colonne, 2 + 2 * ligne);
+                        Console.Write("█");
+                        colonne = 1;
+                        ligne = 1;
+                        Console.ResetColor();
+                        Console.SetCursorPosition(MarginX + SquareValue * 6, 14);
+                        Console.Write("Water " + end + " /30");
+                        Console.ForegroundColor = ConsoleColor.Green;
+
+                        
+                        if(end == 30)
+                        {
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.SetCursorPosition(50, 10);
+                            Console.Write("Vous avez perdu");
+                            Console.SetCursorPosition(13 + 4 * colonne, 2 + 2 * ligne);
+                            Console.Write("");
+                            Console.SetCursorPosition(50, 11);
+                            Console.Write("Cliquez sur la croix pour fermer la fenêtre");
+                            Console.SetCursorPosition(50, 11);
+                            Console.ResetColor();
+                            Console.Write("Cliquez sur la croix pour fermer la fenêtre");
+                        }
+
+                    }
+
+
+                    }
+                    if (TableColRow[colonne - 1, ligne - 1] == 2)
+                    {
+                        TableColRow[colonne - 1, ligne - 1] = 6;
+                        twoboat++;
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.SetCursorPosition(13 + 4 * colonne, 2 + 2 * ligne);
+                        Console.Write("█");
+                        colonne = 1;
+                        ligne = 1;
+                        Console.ResetColor();
+                        Console.SetCursorPosition(MarginX + SquareValue * 6, 10);
+                        Console.Write("Torpilleur " + twoboat + " /2");
+                        if (twoboat == 2)
+                        {
+                            allboat++;
+
+                        }
+                    if (allboat == 4)
+                    {
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.SetCursorPosition(50, 10);
+                        Console.Write("Vous avez gagné");
+                        Console.SetCursorPosition(13 + 4 * colonne, 2 + 2 * ligne);
+                        Console.Write("");
+                        Console.SetCursorPosition(50, 11);
+                        Console.ResetColor();
+                        Console.Write("Cliquez sur la croix pour fermer la fenêtre");
+
+                    }
 
                 }
 
-                if (TableColRow[colonne - 1, ligne - 1] == 4)
-                {
-                    TableColRow[colonne - 1, ligne - 1] = 12;
-                    fourboat++;
+                    if (TableColRow[colonne - 1, ligne - 1] == 3)
+                    {
+                        TableColRow[colonne - 1, ligne - 1] = 9;
+                        threeboat++;
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.SetCursorPosition(13 + 4 * colonne, 2 + 2 * ligne);
+                        Console.Write("█");
+                        colonne = 1;
+                        ligne = 1;
+                        Console.ResetColor();
+                        Console.SetCursorPosition(MarginX + SquareValue * 6, 11);
+                        Console.Write("Contre Torpilleur " + threeboat + " /3");
+                        if (threeboat == 3)
+                        {
+                            allboat++;
+
+                        }
+                    if (allboat == 4)
+                    {
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.SetCursorPosition(50, 10);
+                        Console.Write("Vous avez gagné");
+                        Console.SetCursorPosition(13 + 4 * colonne, 2 + 2 * ligne);
+                        Console.Write("");
+                        Console.SetCursorPosition(50, 11);
+                        Console.ResetColor();
+                        Console.Write("Cliquez sur la croix pour fermer la fenêtre");
+
+                    }
 
                 }
-            } while (end == 30);
+
+                    if (TableColRow[colonne - 1, ligne - 1] == 4)
+                    {
+                        TableColRow[colonne - 1, ligne - 1] = 12;
+                        fourboat++;
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.SetCursorPosition(13 + 4 * colonne, 2 + 2 * ligne);
+                        Console.Write("█");
+                        colonne = 1;
+                        ligne = 1;
+                        Console.ResetColor();
+                        Console.SetCursorPosition(MarginX + SquareValue * 6, 12);
+                        Console.Write("Croiseur " + fourboat + " /4");
+                        if (fourboat == 4)
+                        {
+                            allboat++;
+
+                        }
+                    if (allboat == 4)
+                    {
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.SetCursorPosition(50, 10);
+                        Console.Write("Vous avez gagné");
+                        Console.SetCursorPosition(13 + 4 * colonne, 2 + 2 * ligne);
+                        Console.Write("");
+                        Console.SetCursorPosition(50, 11);
+                        Console.ResetColor();
+                        Console.Write("Cliquez sur la croix pour fermer la fenêtre");
+
+                    }
+                }
+
+                    if (TableColRow[colonne - 1, ligne - 1] == 5)
+                    {
+                        TableColRow[colonne - 1, ligne - 1] = 15;
+                        fiveboat++;
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.SetCursorPosition(13 + 4 * colonne, 2 + 2 * ligne);
+                        Console.Write("█");
+                        colonne = 1;
+                        ligne = 1;
+                        Console.ResetColor();
+                        Console.SetCursorPosition(MarginX + SquareValue * 6, 13);
+                        Console.Write("Porte Avion " + fiveboat + " /5");
+                        if (fiveboat == 5)
+                        {
+                            allboat++;
+
+                        }
+                    if (allboat == 4)
+                    {
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.SetCursorPosition(50, 10);
+                        Console.Write("Vous avez gagné");
+                        Console.SetCursorPosition(13 + 4 * colonne, 2 + 2 * ligne);
+                        Console.Write("");
+                        Console.SetCursorPosition(50, 11);
+                        Console.ResetColor();
+                        Console.Write("Cliquez sur la croix pour fermer la fenêtre");
+
+                    }
+
+
+
+
+                }
+
+            } while (end != 30 || allboat != 5);
             
+                if (end == 30)
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.SetCursorPosition(50, 10);
+                    Console.Write("Vous avez perdu");
 
+                }
 
-            // Table(SquareValue, TableColRow);
-
+                if (allboat == 4)
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.SetCursorPosition(50, 10);
+                    Console.Write("Vous avez gagné");
+                }
             
-
-
-
 
             Console.ReadLine();
 
@@ -557,8 +766,12 @@ namespace Remédiation_Bataille_navale
 
         static void FillCell(int x, int y)
         {
-            Console.SetCursorPosition(13 + 4 * x, 2 + 2 * y);
-            Console.Write('█');
+            
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.SetCursorPosition(13 + 4 * x, 2 + 2 * y);
+                Console.Write('█');
+
+            
         }
 
         static void Table(int x, int[,] y)
@@ -718,7 +931,7 @@ namespace Remédiation_Bataille_navale
             }
             int[,] TableColRow = new int[x, x];
 
-         
+
 
         }
     }
