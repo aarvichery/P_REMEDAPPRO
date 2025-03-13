@@ -796,8 +796,8 @@ namespace Remédiation_Bataille_navale
                     y[6, 9] = Croiseur;
 
                     y[6, 7] = ContreTorpilleur;
-                    y[7, 5] = ContreTorpilleur;
-                    y[8, 6] = ContreTorpilleur;
+                    y[7, 7] = ContreTorpilleur;
+                    y[8, 7] = ContreTorpilleur;
 
                     y[3, 1] = Torpilleur;
                     y[3, 2] = Torpilleur;
@@ -860,7 +860,7 @@ namespace Remédiation_Bataille_navale
 
                     y[5, 6] = ContreTorpilleur;
                     y[5, 7] = ContreTorpilleur;
-                    y[5, 6] = ContreTorpilleur;
+                    y[5, 8] = ContreTorpilleur;
 
                     y[1, 3] = Torpilleur;
                     y[1, 4] = Torpilleur;
@@ -872,7 +872,7 @@ namespace Remédiation_Bataille_navale
                     y[13, 2] = PorteAvion;
                     y[13, 3] = PorteAvion;
                     y[13, 4] = PorteAvion;
-                    y[1, 5] = PorteAvion;
+                    y[13, 5] = PorteAvion;
 
                     y[3, 8] = Croiseur;
                     y[3, 9] = Croiseur;
@@ -881,7 +881,7 @@ namespace Remédiation_Bataille_navale
 
                     y[8, 6] = ContreTorpilleur;
                     y[8, 7] = ContreTorpilleur;
-                    y[8, 6] = ContreTorpilleur;
+                    y[8, 8] = ContreTorpilleur;
 
                     y[3, 5] = Torpilleur;
                     y[3, 6] = Torpilleur;
