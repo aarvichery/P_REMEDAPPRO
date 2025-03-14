@@ -15,6 +15,9 @@ namespace Remédiation_Bataille_navale
         static void Main(string[] args)
         {
 
+            Console.SetWindowSize(240, 63);
+
+
             // Attribution des variables
             // Titre
             int Max = 16;
