@@ -83,4 +83,6 @@
     - Programme: ça progresse bien, continuez
 
 - Journal de travail
-    -
+    - 25 minutes : J'ai testé mon code pour voir si il fonctionnait bien
+    - 5 minutes : J'ai changé la taille de la console dans mon code
+    - 105 minutes : J'ai rajouté l'option de recommencer dans mon code
