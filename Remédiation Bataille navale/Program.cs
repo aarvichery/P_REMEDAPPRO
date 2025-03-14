@@ -262,8 +262,8 @@ namespace Remédiation_Bataille_navale
                     TableColRow[6, 9] = Croiseur;
 
                     TableColRow[6, 7] = ContreTorpilleur;
-                    TableColRow[7, 5] = ContreTorpilleur;
-                    TableColRow[8, 6] = ContreTorpilleur;
+                    TableColRow[6, 5] = ContreTorpilleur;
+                    TableColRow[6, 6] = ContreTorpilleur;
 
                     TableColRow[3, 1] = Torpilleur;
                     TableColRow[3, 2] = Torpilleur;
