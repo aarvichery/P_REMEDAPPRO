@@ -75,3 +75,12 @@
         - 5 minutes : Ajout de mon journal de travail de Vendredi 28 Février car j'avais oublié de le faire
         - 85 minutes : Ajout du choix de la case à attaquer dans mon code
 
+
+## 14.3
+
+- Feedback XCL
+    - Commits et journal OK
+    - Programme: ça progresse bien, continuez
+
+- Journal de travail
+    -
