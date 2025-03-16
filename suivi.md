@@ -86,3 +86,15 @@
     - 25 minutes : J'ai testé mon code pour voir si il fonctionnait bien
     - 5 minutes : J'ai changé la taille de la console dans mon code
     - 105 minutes : J'ai rajouté l'option de recommencer dans mon code
+
+# Conclusion
+
+Le résultat est plutôt bon. Cet agréable, on peut jouer facilement. Dommage que le curseur se repositionne toujours dans le même coin, ça devient un peu Festieux quand on veut aller tirer au milieu de la grille.
+
+Attention : le programme se plante quand je l'exécute sur mon portable parce que la taille de l'écran n'est pas le même que celle sur laquelle vous avez travaillé. C'est le genre de choses qu'il faut envisager et gérer dans le code.
+
+Une chose me dérange un peu : dans le bilan, vous avez mis que un objectif a été "Autrement fait".
+
+Dans la vie professionnelle qui vous attend, vous ne pouvez pas vous permettre ce genre de choses. On vous a demandé une certaine manière de placer les bateaux, vous avez accepté. Cet objectif vous devez donc le réaliser. Et si vous n'y parvenez pas, vous devez justifier des raisons. Mais vous ne pouvez pas décider de vous-même de faire les choses différemment.
+
+Votre projet est validé
